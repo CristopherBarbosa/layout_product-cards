@@ -1,0 +1,23 @@
+.stars {
+  display: flex;
+  margin-left: 16px;
+  padding-bottom: 24px;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--1 &__star:nth-child(-n+1),   // 1ª estrela fica ativa
+  &--2 &__star:nth-child(-n+2),   // 1ª e 2ª ficam ativas
+  &--3 &__star:nth-child(-n+3),   // 1ª, 2ª e 3ª ficam ativas
+  &--4 &__star:nth-child(-n+4),   // 1ª, 2ª, 3ª e 4ª ficam ativas
+  &--5 &__star:nth-child(-n+5) {
+    // todas as 5 ficam ativas
+    background-image: url(../images/star-active.svg);
+  }
+}
